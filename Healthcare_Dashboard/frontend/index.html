@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech.Care - Healthcare Dashboard</title>
+
+    <!-- Google Fonts - Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Chart.js for blood pressure graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- <script src="/Healthcare_Dashboard/frontend/script.js"></script> -->
+</head>
+<body>
+    <div class="app-container">
+
+
+        <!-- ============================================================
+             TOP NAVIGATION BAR
+             Logo | Nav Links | Doctor Profile + Actions
+        ============================================================ -->
+        <nav class="navbar">
+
+            <!-- Brand logo -->
+            <div class="logo">
+                <img alt="Tech Care Logo" src="/Healthcare_Dashboard/assets/TestLogo.svg">
+            </div>
+
+            <!-- Main nav links -->
+            <div class="nav-links">
+                <a href="#" class="nav-item">
+                    <img src="/Healthcare_Dashboard/assets/home.jpg" alt="home" class="icon">
+                    Overview
+                </a>
+                <a href="#" class="nav-item active">
+                    <img src="/Healthcare_Dashboard/assets/group.png" alt="patients" class="icon">
+                    Patients
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="/Healthcare_Dashboard/assets/calender.png" alt="schedule" class="icon">
+                    Schedule
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="/Healthcare_Dashboard/assets/chat.png" alt="message" class="icon">
+                    Message
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="/Healthcare_Dashboard/assets/creditcard.jpg" alt="transactions" class="icon">
+                    Transactions
+                </a>
+            </div>
+
+            <!-- Logged-in doctor info + settings -->
+            <div class="nav-user">
+                <img src="/Healthcare_Dashboard/assets/senior-woman-doctor.png" alt="Doctor profile" class="user-avatar">
+                <div class="user-info">
+                    <span class="user-name">Dr. Jose Simmons</span>
+                    <span class="user-role">General Practitioner</span>
+                </div>
+                <div class="nav-divider"></div>
+                <!-- Settings and more options icons -->
+                <div class="nav-actions">
+                    <img src="/Healthcare_Dashboard/assets/settings.svg" alt="settings" class="icon action-icon">
+                    <img src="/Healthcare_Dashboard/assets/more.svg" alt="more" class="icon action-icon">
+                </div>
+            </div>
+
+        </nav>
+
+
+        <!-- ============================================================
+             MAIN DASHBOARD - 3 column grid layout
+             [ Patient List ] [ Center Content ] [ Patient Profile ]
+        ============================================================ -->
+        <main class="dashboard-grid">
+
+
+            <!-- --------------------------------------------------------
+                 LEFT SIDEBAR — Patient List
+            -------------------------------------------------------- -->
+            <aside class="sidebar card">
+
+                <div class="sidebar-header">
+                    <h2>Patients</h2>
+                    <img src="/Healthcare_Dashboard/assets/search.jpg" alt="search" class="icon more-icon">
+                </div>
+
+                <!-- Scrollable patient list -->
+                <div class="patient-list">
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/emily.png" alt="Emily Williams" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Emily Williams</h4>
+                            <p>Female, 18</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/ryan.png" alt="Ryan Johnson" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Ryan Johnson</h4>
+                            <p>Male, 45</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/brandon.png" alt="Brandon Mitchell" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Brandon Mitchell</h4>
+                            <p>Male, 36</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <!-- Currently selected/active patient -->
+                    <div class="patient-item active-patient">
+                        <img src="/Healthcare_Dashboard/assets/jessica.png" alt="Jessica Taylor" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Jessica Taylor</h4>
+                            <p>Female, 28</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/samantha.png" alt="Samantha Johnson" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Samantha Johnson</h4>
+                            <p>Female, 56</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/ashley.png" alt="Ashley Martinez" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Ashley Martinez</h4>
+                            <p>Female, 54</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/olivia.png" alt="Olivia Brown" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Olivia Brown</h4>
+                            <p>Female, 32</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/tyler.png" alt="Tyler Davis" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Tyler Davis</h4>
+                            <p>Male, 19</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/kevin.png" alt="Kevin Anderson" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Kevin Anderson</h4>
+                            <p>Male, 30</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/dylan.png" alt="Dylan Thompson" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Dylan Thompson</h4>
+                            <p>Male, 36</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/nathan.png" alt="Nathan Evans" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Nathan Evans</h4>
+                            <p>Male, 58</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                    <div class="patient-item">
+                        <img src="/Healthcare_Dashboard/assets/mike.png" alt="Mike Nolan" class="avatar">
+                        <div class="patient-item-info">
+                            <h4>Mike Nolan</h4>
+                            <p>Male, 31</p>
+                        </div>
+                        <img src="/Healthcare_Dashboard/assets/more_horiz.png" alt="more" class="icon more-icon">
+                    </div>
+
+                </div>
+            </aside>
+            <!-- end left sidebar -->
+
+
+            <!-- --------------------------------------------------------
+                 CENTER CONTENT — Diagnosis History + Diagnostic List
+            -------------------------------------------------------- -->
+            <div class="center-content">
+
+                <!-- Blood pressure chart + vitals summary -->
+                <section class="card diagnosis-card">
+                    <h2>Diagnosis History</h2>
+
+                    <div class="chart-container-wrapper">
+
+                        <!-- Line chart area -->
+                        <div class="chart-main">
+                            <div class="chart-header">
+                                <h3>Blood Pressure</h3>
+                                <!-- Date range filter dropdown -->
+                                <button class="chart-filter">
+                                    <span>Last 6 months</span>
+                                    <img src="/Healthcare_Dashboard/assets/expand_more.png" alt="more" class="metric-arrow-icon">
+                                </button>
+                            </div>
+                            <div class="chart-canvas-area">
+                                <!-- Canvas target — chart.js renders here via script.js -->
+                                <canvas id="bpChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Systolic / Diastolic readings beside the chart -->
+                        <div class="chart-metrics">
+                            <div class="metric-item systolic">
+                                <div class="metric-title">
+                                    <span class="dot dot-pink"></span> Systolic
+                                </div>
+                                <div class="metric-value">160</div>
+                                <div class="metric-status">
+                                    <img src="/Healthcare_Dashboard/assets/ArrowUp.png" alt="up" class="metric-arrow-icon">
+                                    Higher than Average
+                                </div>
+                            </div>
+                            <hr class="metric-divider">
+                            <div class="metric-item diastolic">
+                                <div class="metric-title">
+                                    <span class="dot dot-purple"></span> Diastolic
+                                </div>
+                                <div class="metric-value">78</div>
+                                <div class="metric-status">
+                                    <img src="/Healthcare_Dashboard/assets/ArrowDown.png" alt="down" class="metric-arrow-icon">
+                                    Lower than Average
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 3 small vital stat cards: respiratory, temp, heart rate -->
+                    <div class="small-metrics-grid">
+
+                        <div class="small-card respiratory-card">
+                            <div class="small-card-icon">
+                                <img src="/Healthcare_Dashboard/assets/respiratory rate.png" alt="respiratory" class="small-card-img-icon">
+                            </div>
+                            <p class="small-card-title">Respiratory Rate</p>
+                            <h3 class="small-card-value">20 bpm</h3>
+                            <p class="small-card-status">Normal</p>
+                        </div>
+
+                        <div class="small-card temperature-card">
+                            <div class="small-card-icon">
+                                <img src="/Healthcare_Dashboard/assets/temperature.png" alt="temperature" class="small-card-img-icon">
+                            </div>
+                            <p class="small-card-title">Temperature</p>
+                            <h3 class="small-card-value">98.6°F</h3>
+                            <p class="small-card-status">Normal</p>
+                        </div>
+
+                        <div class="small-card heart-card">
+                            <div class="small-card-icon">
+                                <img src="/Healthcare_Dashboard/assets/HeartBPM.png" alt="heart" class="small-card-img-icon">
+                            </div>
+                            <p class="small-card-title">Heart Rate</p>
+                            <h3 class="small-card-value">78 bpm</h3>
+                            <p class="small-card-status">
+                                <img src="/Healthcare_Dashboard/assets/ArrowDown.png" alt="down" class="metric-arrow-icon">
+                                Lower than Average
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+                <!-- end diagnosis history -->
+
+
+                <!-- Active diagnoses table -->
+                <section class="card diagnostic-list-card">
+                    <h2>Diagnostic List</h2>
+                    <div class="table-container">
+                        <table class="diagnostic-table">
+                            <thead>
+                                <tr>
+                                    <th>Problem/Diagnosis</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Hypertension</td>
+                                    <td>Chronic high blood pressure</td>
+                                    <td>Under Observation</td>
+                                </tr>
+                                <tr>
+                                    <td>Type 2 Diabetes</td>
+                                    <td>Insulin resistance and elevated blood sugar</td>
+                                    <td>Cured</td>
+                                </tr>
+                                <tr>
+                                    <td>Asthma</td>
+                                    <td>Recurrent episodes of bronchial constriction</td>
+                                    <td>Inactive</td>
+                                </tr>
+                                <tr>
+                                    <td>Osteoarthritis</td>
+                                    <td>Degenerative joint disease</td>
+                                    <td>Untreated</td>
+                                </tr>
+                                <tr>
+                                    <td>Allergic Rhinitis</td>
+                                    <td>Seasonal allergies causing nasal congestion</td>
+                                    <td>Active</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- end diagnostic list -->
+
+            </div>
+            <!-- end center content -->
+
+
+            <!-- --------------------------------------------------------
+                 RIGHT PANEL — Patient Profile + Lab Results
+            -------------------------------------------------------- -->
+            <aside class="right-panel">
+
+                <!-- Patient profile card -->
+                <div class="card profile-card">
+                    <div class="profile-image-container">
+                        <img src="/Healthcare_Dashboard/assets/jessica2.png" alt="Jessica Taylor" class="profile-large-img">
+                    </div>
+                    <h2 class="profile-name">Jessica Taylor</h2>
+
+                    <!-- Personal details list -->
+                    <div class="profile-details">
+
+                        <div class="detail-row">
+                            <div class="detail-icon">
+                                <img src="/Healthcare_Dashboard/assets/BirthIcon.png" alt="birth" class="detail-icon-img">
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Date Of Birth</p>
+                                <p class="detail-value">August 23, 1996</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-row">
+                            <div class="detail-icon">
+                                <img src="/Healthcare_Dashboard/assets/FemaleIcon.png" alt="gender" class="detail-icon-img">
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Gender</p>
+                                <p class="detail-value">Female</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-row">
+                            <div class="detail-icon">
+                                <img src="/Healthcare_Dashboard/assets/PhoneIcon.png" alt="phone" class="detail-icon-img">
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Contact Info.</p>
+                                <p class="detail-value">(415) 555-1234</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-row">
+                            <div class="detail-icon">
+                                <img src="/Healthcare_Dashboard/assets/PhoneIcon.png" alt="emergency" class="detail-icon-img">
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Emergency Contacts</p>
+                                <p class="detail-value">(415) 555-5678</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-row">
+                            <div class="detail-icon">
+                                <img src="/Healthcare_Dashboard/assets/InsuranceIcon.png" alt="insurance" class="detail-icon-img">
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Insurance Provider</p>
+                                <p class="detail-value">Sunrise Health Assurance</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="btn-primary">Show All Information</button>
+                </div>
+                <!-- end profile card -->
+
+
+                <!-- Downloadable lab reports list -->
+                <div class="card lab-results-card">
+                    <h2>Lab Results</h2>
+                    <ul class="lab-list">
+                        <li class="lab-item">
+                            <span>Blood Tests</span>
+                            <img src="/Healthcare_Dashboard/assets/download_FILL0_wght300_GRAD0_opsz24 (1).png" class="icon download-icon" alt="download">
+                        </li>
+                        <!-- CT Scans is currently highlighted/active -->
+                        <li class="lab-item active">
+                            <span>CT Scans</span>
+                            <img src="/Healthcare_Dashboard/assets/download_FILL0_wght300_GRAD0_opsz24 (1).png" class="icon download-icon" alt="download">
+                        </li>
+                        <li class="lab-item">
+                            <span>Radiology Reports</span>
+                            <img src="/Healthcare_Dashboard/assets/download_FILL0_wght300_GRAD0_opsz24 (1).png" class="icon download-icon" alt="download">
+                        </li>
+                        <li class="lab-item">
+                            <span>X-Rays</span>
+                            <img src="/Healthcare_Dashboard/assets/download_FILL0_wght300_GRAD0_opsz24 (1).png" class="icon download-icon" alt="download">
+                        </li>
+                        <li class="lab-item">
+                            <span>Urine Test</span>
+                            <img src="/Healthcare_Dashboard/assets/download_FILL0_wght300_GRAD0_opsz24 (1).png" class="icon download-icon" alt="download">
+                        </li>
+                    </ul>
+                </div>
+                <!-- end lab results -->
+
+            </aside>
+            <!-- end right panel -->
+
+
+        </main>
+    </div>
+
+    <!-- JS goes last so the DOM is ready when chart.js initialises -->
+    <script src="/Healthcare_Dashboard/frontend/script.js"></script>
+</body>
+</html>
